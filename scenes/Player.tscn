@@ -1,0 +1,84 @@
+[gd_scene load_steps=22 format=2]
+
+[ext_resource path="res://assets/img/ghoul-frozen-dead.png" type="Texture" id=1]
+[ext_resource path="res://scenes/Player.gd" type="Script" id=2]
+[ext_resource path="res://assets/img/ghoul-fire.png" type="Texture" id=3]
+[ext_resource path="res://assets/img/ghoul-frozen.png" type="Texture" id=4]
+[ext_resource path="res://assets/img/ghoul-trap.png" type="Texture" id=5]
+[ext_resource path="res://assets/img/ghoul-actions-off.png" type="Texture" id=6]
+[ext_resource path="res://assets/img/ghoul-def.png" type="Texture" id=7]
+[ext_resource path="res://assets/sounds/step_grass.wav" type="AudioStream" id=8]
+[ext_resource path="res://assets/sounds/get_item2.wav" type="AudioStream" id=9]
+[ext_resource path="res://assets/sounds/frozen.wav" type="AudioStream" id=10]
+[ext_resource path="res://assets/sounds/frozen_full.wav" type="AudioStream" id=11]
+[ext_resource path="res://assets/sounds/lava.wav" type="AudioStream" id=12]
+[ext_resource path="res://assets/sounds/underwater.wav" type="AudioStream" id=13]
+[ext_resource path="res://assets/sounds/done.wav" type="AudioStream" id=14]
+[ext_resource path="res://assets/sounds/cant_step2.wav" type="AudioStream" id=15]
+[ext_resource path="res://assets/sounds/use_key.wav" type="AudioStream" id=16]
+[ext_resource path="res://assets/sounds/get_brain2.wav" type="AudioStream" id=17]
+[ext_resource path="res://assets/sounds/lava_after_snow.wav" type="AudioStream" id=18]
+[ext_resource path="res://assets/sounds/trap_activate.wav" type="AudioStream" id=19]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 7 ), ExtResource( 6 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 1 ), ExtResource( 5 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 10, 14 )
+
+[node name="Player" type="Area2D"]
+z_index = 100
+collision_mask = 6
+script = ExtResource( 2 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 2 )
+
+[node name="Step" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 8 )
+
+[node name="Get_item" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 9 )
+volume_db = -5.0
+
+[node name="Frozen" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 10 )
+
+[node name="Frozen_full" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 11 )
+volume_db = -1.0
+
+[node name="Lava_dead" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 12 )
+
+[node name="Underwater" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 13 )
+
+[node name="Win" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 14 )
+
+[node name="Cant_step" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 15 )
+
+[node name="Open_Gates" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 16 )
+
+[node name="Get_brain" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 17 )
+
+[node name="Lava_snow" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 18 )
+
+[node name="Trap_activate" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 19 )
+
+[connection signal="area_entered" from="." to="." method="_on_Player_area_entered"]
+[connection signal="area_exited" from="." to="." method="_on_Player_area_exited"]

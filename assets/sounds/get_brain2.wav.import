@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/get_brain2.wav-e366bc3a26c0de867c46de603d0cbe45.sample"
+
+[deps]
+
+source_file="res://assets/sounds/get_brain2.wav"
+dest_files=[ "res://.import/get_brain2.wav-e366bc3a26c0de867c46de603d0cbe45.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

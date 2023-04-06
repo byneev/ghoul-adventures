@@ -1,0 +1,79 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://scenes/Board.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/fields/Grass.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/fields/Water.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/fields/Leaf.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/fields/Snow.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/fields/Lava.tscn" type="PackedScene" id=6]
+
+[node name="Level 5" instance=ExtResource( 1 )]
+current_level = 5
+actions_count = 18
+grid_size = 4
+
+[node name="Brain" parent="." index="1"]
+position = Vector2( 66, 43 )
+
+[node name="Grave" parent="." index="2"]
+position = Vector2( 162, 140 )
+
+[node name="Player" parent="." index="3"]
+position = Vector2( 162, 139 )
+
+[node name="First_field" parent="." index="10" instance=ExtResource( 2 )]
+position = Vector2( 50, 27 )
+
+[node name="Lava" parent="." index="11" instance=ExtResource( 6 )]
+position = Vector2( 82, 27 )
+
+[node name="Lava2" parent="." index="12" instance=ExtResource( 6 )]
+position = Vector2( 82, 59 )
+
+[node name="Lava4" parent="." index="13" instance=ExtResource( 6 )]
+position = Vector2( 50, 91 )
+
+[node name="Lava5" parent="." index="14" instance=ExtResource( 6 )]
+position = Vector2( 82, 91 )
+
+[node name="Grass2" parent="." index="15" instance=ExtResource( 2 )]
+position = Vector2( 114, 27 )
+
+[node name="Grass3" parent="." index="16" instance=ExtResource( 2 )]
+position = Vector2( 114, 59 )
+
+[node name="Grass4" parent="." index="17" instance=ExtResource( 2 )]
+position = Vector2( 50, 123 )
+
+[node name="Grass5" parent="." index="18" instance=ExtResource( 2 )]
+position = Vector2( 82, 123 )
+
+[node name="Grass6" parent="." index="19" instance=ExtResource( 2 )]
+position = Vector2( 114, 123 )
+
+[node name="Last_field" parent="." index="20" instance=ExtResource( 2 )]
+position = Vector2( 146, 123 )
+
+[node name="Water" parent="." index="21" instance=ExtResource( 3 )]
+position = Vector2( 114, 91 )
+
+[node name="Water2" parent="." index="22" instance=ExtResource( 3 )]
+position = Vector2( 146, 91 )
+
+[node name="Snow" parent="." index="23" instance=ExtResource( 5 )]
+position = Vector2( 146, 59 )
+
+[node name="Snow2" parent="." index="24" instance=ExtResource( 5 )]
+position = Vector2( 146, 27 )
+
+[node name="Leaf" parent="." index="25" instance=ExtResource( 4 )]
+position = Vector2( 50, 123 )
+
+[node name="Snow3" parent="." index="26" instance=ExtResource( 5 )]
+position = Vector2( 50, 59 )
+
+[node name="Start" parent="." index="29"]
+position = Vector2( 50, 27 )
+
+[node name="End" parent="." index="30"]
+position = Vector2( 146, 123 )

@@ -1,0 +1,85 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://scenes/Board.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/fields/Grass.tscn" type="PackedScene" id=2]
+[ext_resource path="res://assets/fonts/connection/Connection.otf" type="DynamicFontData" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+font_data = ExtResource( 3 )
+
+[node name="Level1" instance=ExtResource( 1 )]
+current_level = 1
+actions_count = 8
+grid_size = 3
+
+[node name="First_field" parent="." index="1" instance=ExtResource( 2 )]
+position = Vector2( 67, 27 )
+script = null
+
+[node name="Grass" parent="." index="2" instance=ExtResource( 2 )]
+position = Vector2( 99, 27 )
+script = null
+
+[node name="Grass2" parent="." index="3" instance=ExtResource( 2 )]
+position = Vector2( 131, 27 )
+script = null
+
+[node name="Grass3" parent="." index="4" instance=ExtResource( 2 )]
+position = Vector2( 67, 59 )
+script = null
+
+[node name="Grass4" parent="." index="5" instance=ExtResource( 2 )]
+position = Vector2( 99, 59 )
+script = null
+
+[node name="Grass5" parent="." index="6" instance=ExtResource( 2 )]
+position = Vector2( 131, 59 )
+script = null
+
+[node name="Grass6" parent="." index="7" instance=ExtResource( 2 )]
+position = Vector2( 67, 91 )
+script = null
+
+[node name="Grass7" parent="." index="8" instance=ExtResource( 2 )]
+position = Vector2( 99, 91 )
+script = null
+
+[node name="Last_field" parent="." index="9" instance=ExtResource( 2 )]
+position = Vector2( 131, 91 )
+script = null
+
+[node name="Brain" parent="." index="10"]
+position = Vector2( 83, 44 )
+
+[node name="Grave" parent="." index="11"]
+position = Vector2( 147, 108 )
+
+[node name="Player" parent="." index="12"]
+position = Vector2( 145, 107 )
+
+[node name="Start" parent="." index="21"]
+position = Vector2( 67, 27 )
+
+[node name="End" parent="." index="22"]
+position = Vector2( 131, 91 )
+
+[node name="Level" type="Label" parent="." index="23"]
+margin_left = 24.0
+margin_top = 130.0
+margin_right = 267.0
+margin_bottom = 167.0
+custom_colors/font_color = Color( 0.45098, 0.243137, 0.223529, 1 )
+custom_colors/font_outline_modulate = Color( 0.0941176, 0.0784314, 0.145098, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "Get brain and back to 
+grave before sunrise"
+
+[connection signal="area_entered" from="First_field" to="First_field" method="_on_Field_area_entered"]
+[connection signal="area_entered" from="Grass" to="Grass" method="_on_Field_area_entered"]
+[connection signal="area_entered" from="Grass2" to="Grass2" method="_on_Field_area_entered"]
+[connection signal="area_entered" from="Grass3" to="Grass3" method="_on_Field_area_entered"]
+[connection signal="area_entered" from="Grass4" to="Grass4" method="_on_Field_area_entered"]
+[connection signal="area_entered" from="Grass5" to="Grass5" method="_on_Field_area_entered"]
+[connection signal="area_entered" from="Grass6" to="Grass6" method="_on_Field_area_entered"]
+[connection signal="area_entered" from="Grass7" to="Grass7" method="_on_Field_area_entered"]
+[connection signal="area_entered" from="Last_field" to="Last_field" method="_on_Field_area_entered"]
